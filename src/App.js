@@ -13,13 +13,16 @@ import SearchBar from './components/SearchBar/SearchBar'
 import dummyData from './dummy-data'
 import './App.css';
 
+
 const App = () => {
   // Create a state called `posts` to hold the array of post objects, **initializing to dummyData**.
   const [posts, setPosts] = useState(dummyData);
   // This state is the source of truth for the data inside the app. You won't be needing dummyData anymore.
   const [searchTerm, setSearchTerm] = useState('');
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
+  const [comment, setComment] = useState('');
 
+  
   const likePost = postId => {
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
@@ -46,8 +49,6 @@ const App = () => {
       return post.username.toLowerCase().includes(normal)
     })
   }
-
-
 
 
   return (
